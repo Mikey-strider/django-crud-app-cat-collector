@@ -118,6 +118,15 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+LOGIN_URL = 'home'
+
+# after a succesful login where do you want people to go!
+
+LOGIN_REDIRECT_URL = 'cat-index'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

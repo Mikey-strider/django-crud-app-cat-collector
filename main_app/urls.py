@@ -8,7 +8,7 @@ urlpatterns = [
 	# django we use trailing /'s 
 	# root route will just be an empty string
 	# localhost:8000
-	path('', views.home, name='home'),
+	path('', views.Home.as_view(), name='home'),
 	path('about/', views.about, name='about'),
 	# localhost:8000/cats
 	path('cats/', views.cat_index, name='cat-index'),
@@ -22,9 +22,10 @@ urlpatterns = [
 	path('toys/create/', views.ToyCreate.as_view(), name='toy-create'),
 	path('toys/<int:pk>/', views.ToyDetail.as_view(), name='toy-detail'),
 	path('toys/', views.ToyList.as_view(), name='toy-index'),
-    path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toy-update'),
-    path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toy-delete'),
+  path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toy-update'),
+  path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toy-delete'),
 	path('cats/<int:cat_id>/associate-toy/<int:toy_id>/', views.associate_toy, name='associate-toy'),
 	path('cats/<int:cat_id>/remove-toy/<int:toy_id>/', views.remove_toy, name='remove-toy'),
+	path('accounts/signup/', views.signup, name='signup'),
 
 ]
